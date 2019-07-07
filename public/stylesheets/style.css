@@ -38,6 +38,10 @@ h6 {
     width: 380px;
 }
 
+#account-form-container {
+    width: 380px;
+}
+
     #login .btn {
         float: left;
         width: 48%;

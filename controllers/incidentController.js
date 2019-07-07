@@ -462,8 +462,8 @@ incidentController.ptrnAAC = function (req, res) {
             console.log(incidents);
             //var procPath = incidents[0].procedural_path.indexof("/");
             //console.log(procPath);
-            var proc = incidents[0].procedural_path.split("\").pop();
-            //var proc = incidents[0].procedural_path.split("/").pop();
+            //var proc = incidents[0].procedural_path.split("\\").pop();
+            var proc = incidents[0].procedural_path.split("/").pop();
             var strProc = proc.trim();
             console.log("strProc : " + strProc); //getting error message
             var srchText = strProc ? strProc : "Default";

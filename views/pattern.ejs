@@ -8,7 +8,7 @@
     <script src="../javascripts/jquery-3.3.1.min.js"></script>
 	<script>
        $(function () {
-            $("#header").load("../includes/top.ejs");
+           // $("#header").load("../includes/top.ejs");
             $("#footer").load("../includes/footer.ejs");
             $("#leftnav").load("../includes/leftnav.ejs");
         });
@@ -58,7 +58,7 @@
 	</script>
 </head>
 <body>
-    <div id="header"></div>
+    <div id="header"><% include ./includes/top.ejs %></div>
     <div id="leftnav"></div>
 
 	<div class="container">

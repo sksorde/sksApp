@@ -271,9 +271,9 @@ incidentController.export = function (req, res) {
     const currentDate = generic.currentDate().toString();
     var filename = "incident" + currentDate + ".csv";
     var dataArray;
-    var pipeline = ptrnpipeline();
-    //Incident.find({}).lean().exec(function (err, incidents) {
-    Incident.aggregate(pipeline, function (err, incidents) {
+    //var pipeline = ptrnpipeline();
+    Incident.find({}).lean().exec(function (err, incidents) {
+    //Incident.aggregate(pipeline, function (err, incidents) {
         if (err) {
             console.log("Error :" + err);
         }
@@ -345,7 +345,11 @@ incidentController.patternResult = function (req, res) {
     var pipeline = [
         {
             $match: {
-                $text: { $search: srchText }
+                //$text: { $search: srchText }
+                $or: [
+                    { bginfo: { $regex: ".*" + srchText + ".*" } },
+                    { error_msg: { $regex: ".*" + srchText + ".*" } }
+                ]                               
             }
         },
         {
@@ -395,14 +399,15 @@ incidentController.patternResult = function (req, res) {
 };
 
 incidentController.patternResultWkaround = function (req, res) {
-    //console.log("TestWK :" + req.query.searchWrkArnd);
+    console.log("TestWK :" + req.query.searchWrkArnd);
     var srchText = req.query.searchWrkArnd ? req.query.searchWrkArnd : "Change";
     //var srchText = req.query.searchWrkArnd;
 
     var pipeline = [
         {
             $match: {
-                $text: { $search: srchText }
+                //$text: { $search: srchText }
+                procedure: { $regex: ".*" + srchText + ".*" }
             }
         }
     ]
@@ -420,7 +425,8 @@ function ptrnpipeline() {
     var pipeline = [
         {
             $match: {
-                $text: { $search: srchText }
+                //$text: { $search: srchText }
+                bginfo: { $regex: ".*" + srchText + ".*" }
             }
         },
         {
@@ -458,14 +464,15 @@ incidentController.ptrnAAC = function (req, res) {
             //console.log(procPath);
             var proc = incidents[0].procedural_path.split("/").pop();
             var strProc = proc.trim();
-            console.log(strProc); //getting error message
+            console.log("strProc : " + strProc); //getting error message
             var srchText = strProc ? strProc : "Default";
             //var srchText = req.query.searchWrkArnd;
 
             var pipeline = [
                 {
                     $match: {
-                        $text: { $search: srchText }
+                        //$text: { $search: srchText }
+                        procedure: { $regex: ".*" + srchText + ".*" }
                     }
                 }
             ]

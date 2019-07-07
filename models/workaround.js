@@ -8,7 +8,7 @@ var workaroundSchema = new Schema({
     workaround: { type: String, Required: 'Workaround cannot be left blank.' }
 });
 
-workaroundSchema.index({ procedure: "text" });
+//workaroundSchema.index({ procedure: "text" });
 
 autoIncrement.initialize(mongoose.connection);
 workaroundSchema.plugin(autoIncrement.plugin, { model: 'Workaround', field: 'id_num', startAt: 1, incrementBy: 1 });

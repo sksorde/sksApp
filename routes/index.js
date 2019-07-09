@@ -195,4 +195,9 @@ router.post('/admin/deleteWorkaround', function (req, res) {
 // WORKAROUND - END
 //*************ADMIN PAGES - END****************
 
+//Chat:
+router.get('/chat', function (req, res) {
+    incident.chat(req, res);
+});
+
 module.exports = router;

@@ -20,3 +20,10 @@ npm install --save express-session
 npm install --save stylus
 npm install --save moment
 npm install --save crypto
+
+
+======
+Chatbot
+npm install dotenv --save
+npm install ibm-watson --save
+npm install socket.io --save

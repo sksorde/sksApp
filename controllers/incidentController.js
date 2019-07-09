@@ -536,4 +536,15 @@ function pagination(req, res, query) {
 }
 //*************PAGINATION - END****************
 
+//Chat:
+incidentController.chat = function (req, res) {
+    var user;
+    if (req.session.user != "undefined") {
+        user = req.session.user.name;
+        //console.log("Pagination UserName: " + req.query.user);
+        console.log("Pagination : " + req.session.user.name);
+    }
+    res.render("../views/chat", { userName: user });    
+};
+
 module.exports = incidentController;

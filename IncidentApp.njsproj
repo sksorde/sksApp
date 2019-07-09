@@ -53,6 +53,7 @@
     <Compile Include="public\modules\email-dispatcher.js" />
     <Compile Include="public\modules\userDetails.js" />
     <Compile Include="public\validators\accountValidator.js" />
+    <Compile Include="public\validators\chat.js" />
     <Compile Include="public\validators\emailValidator.js" />
     <Compile Include="public\validators\login.js" />
     <Compile Include="public\validators\loginValidator.js" />
@@ -74,6 +75,7 @@
     <Content Include="public\files\IncidentCollection.xlsx" />
     <Content Include="public\files\mongoDBCommands.txt" />
     <Content Include="public\stylesheets\bootstrap.min.css" />
+    <Content Include="public\stylesheets\chatstyle.css" />
     <Content Include="public\stylesheets\mainsks.css" />
     <Content Include="public\stylesheets\style.css" />
     <Content Include="public\stylesheets\style.styl" />
@@ -85,6 +87,7 @@
     <Content Include="views\admin\listWorkaround.ejs" />
     <Content Include="views\edit.ejs" />
     <Content Include="views\home.ejs" />
+    <Content Include="views\chat.ejs" />
     <Content Include="views\import.ejs" />
     <Content Include="views\incident.ejs" />
     <Content Include="views\index.ejs">

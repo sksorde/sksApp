@@ -109,6 +109,13 @@ body {
     width: 1100px;
 }
 
+.even {
+    background-color:blueviolet;
+}
+
+.odd {
+    background-color: aqua;
+}
 
 .topnav {             
     // position: fixed;
@@ -187,16 +194,18 @@ form {
 .divTable {
     display: table;
     width: 100%;
-    background-color: #DDDDDD;
+    background-color: #DDDDDD;    
 }
 
 .divTableRow {
     display: table-row;
+    font-size: 14px;
 }
 
 .divTableHeading {
     background-color: #DDDDDD;
     display: table-header-group;
+    font-size: 16px;
 }
 
 .divTableCell, .divTableHead {
